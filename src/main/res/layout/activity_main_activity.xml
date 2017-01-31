@@ -4,7 +4,7 @@
     android:id="@+id/activity_main_activitity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ru.kanviner.casualcalculator.MainActivitity">
+    tools:context="ru.kanviner.casualcalculator.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -20,68 +20,66 @@
         android:layout_alignParentStart="true">
 
         <ru.kanviner.casualcalculator.customviews.CalcButton
-            android:text="D"
+            android:text="⇚"
             android:layout_columnWeight="1"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
-            android:text="D"
+            android:text="√"
             android:layout_columnWeight="1"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
-            android:text="D"
+            android:text="/"
             android:layout_columnWeight="1"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
-            android:text="D"
-            android:layout_columnWeight="1"/>
-
-        <ru.kanviner.casualcalculator.customviews.CalcButton
-            android:text="D"
-            android:layout_columnWeight="1"/>
-        <ru.kanviner.casualcalculator.customviews.CalcButton
-            android:text="D"
-            android:layout_columnWeight="1"/>
-        <ru.kanviner.casualcalculator.customviews.CalcButton
-            android:text="D"
-            android:layout_columnWeight="1"/>
-        <ru.kanviner.casualcalculator.customviews.CalcButton
-            android:text="D"
+            android:text="X"
             android:layout_columnWeight="1"/>
 
         <ru.kanviner.casualcalculator.customviews.CalcButton
-            android:text="D"
+            android:text="7"
             android:layout_columnWeight="1"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
-            android:text="D"
+            android:text="8"
             android:layout_columnWeight="1"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
-            android:text="D"
+            android:text="9"
             android:layout_columnWeight="1"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
-            android:text="D"
-            android:layout_columnWeight="1"/>
-
-        <ru.kanviner.casualcalculator.customviews.CalcButton
-            android:text="D"
-            android:layout_columnWeight="1"/>
-        <ru.kanviner.casualcalculator.customviews.CalcButton
-            android:text="D"
-            android:layout_columnWeight="1"/>
-        <ru.kanviner.casualcalculator.customviews.CalcButton
-            android:text="D"
-            android:layout_columnWeight="1"/>
-        <ru.kanviner.casualcalculator.customviews.CalcButton
-            android:text="D"
+            android:text="-"
             android:layout_columnWeight="1"/>
 
         <ru.kanviner.casualcalculator.customviews.CalcButton
-            android:text="D"
+            android:text="4"
             android:layout_columnWeight="1"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
-            android:text="D"
+            android:text="5"
             android:layout_columnWeight="1"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
-            android:text="D"
+            android:text="6"
             android:layout_columnWeight="1"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
-            android:text="D"
+            android:text="+"
+            android:layout_columnWeight="1"/>
+
+        <ru.kanviner.casualcalculator.customviews.CalcButton
+            android:text="1"
+            android:layout_columnWeight="1"/>
+        <ru.kanviner.casualcalculator.customviews.CalcButton
+            android:text="2"
+            android:layout_columnWeight="1"/>
+        <ru.kanviner.casualcalculator.customviews.CalcButton
+            android:text="3"
+            android:layout_columnWeight="1"/>
+        <ru.kanviner.casualcalculator.customviews.CalcButton
+            android:text="="
+            android:layout_rowSpan="2"
+            android:layout_columnWeight="1"
+            android:id="@+id/equallyBtn" />
+
+        <ru.kanviner.casualcalculator.customviews.CalcButton
+            android:text="0"
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="2"
+            android:id="@+id/zeroBtn" />
+        <ru.kanviner.casualcalculator.customviews.CalcButton
+            android:text="."
             android:layout_columnWeight="1"/>
     </GridLayout>
 </RelativeLayout>

@@ -37,10 +37,10 @@ public class CalcButton extends Button {
     protected void onMeasure(final int widthMeasureSpec, final int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
-        final int msrHeight = getMeasuredHeight();
         final int msrWidth = getMeasuredWidth();
+        final int msrHeight = getMeasuredHeight();
 
-        Size mySize = calcSize(msrHeight, msrWidth);
+        Size mySize = calcSize(msrWidth, msrHeight);
 
         setMeasuredDimension(mySize.getWidth(), mySize.getHeight());
     }
@@ -52,14 +52,14 @@ public class CalcButton extends Button {
      * @param msrWidth
      * @return
      */
-    private Size calcSize(int msrHeight, int msrWidth) {
+    private Size calcSize(int msrWidth, int msrHeight) {
         int width;
-        int heigth;
+        int height;
 
         width = msrWidth;
-        heigth = (int) (width / xyRelation);
+        height = (int) (width / xyRelation);
 
-        return new Size(width, heigth);
+        return new Size(width, height);
     }
 
     @Override

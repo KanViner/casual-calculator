@@ -1,11 +1,7 @@
 [
     {
-        "merged": "E:\\android\\AndroidStudioProjects\\CasualCalculator\\casualcalculator\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main_activitity2.xml",
-        "source": "E:\\android\\AndroidStudioProjects\\CasualCalculator\\casualcalculator\\src\\main\\res\\layout\\activity_main_activitity2.xml"
-    },
-    {
-        "merged": "E:\\android\\AndroidStudioProjects\\CasualCalculator\\casualcalculator\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main_activitity.xml",
-        "source": "E:\\android\\AndroidStudioProjects\\CasualCalculator\\casualcalculator\\src\\main\\res\\layout\\activity_main_activitity.xml"
+        "merged": "E:\\android\\AndroidStudioProjects\\CasualCalculator\\casualcalculator\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main_activity.xml",
+        "source": "E:\\android\\AndroidStudioProjects\\CasualCalculator\\casualcalculator\\src\\main\\res\\layout\\activity_main_activity.xml"
     },
     {
         "merged": "E:\\android\\AndroidStudioProjects\\CasualCalculator\\casualcalculator\\build\\intermediates\\res\\merged\\debug\\layout\\test_layout.xml",
