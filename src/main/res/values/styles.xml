@@ -7,11 +7,13 @@
 
     <style name="CalcButtonTheme">
         <item name="android:layout_gravity">fill</item>
-        <item name="android:layout_margin">2dp</item>
+        <item name="android:layout_margin">1dp</item>
         <item name="android:textSize">32sp</item>
-        <item name="android:textColor">#ffffff</item>
+        <item name="android:textColor">#e1e1e1</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_columnWeight">1</item>
+
+        <item name="android:onClick">buttonClicked</item>
     </style>
 
 </resources>

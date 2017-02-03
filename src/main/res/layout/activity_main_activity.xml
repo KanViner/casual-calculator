@@ -15,12 +15,12 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:layout_weight="1"
-        android:text="Hello Calc!"
+        android:text=""
         android:layout_gravity="right|bottom"
-        android:gravity="bottom"
+        android:gravity="bottom|right"
 
         android:textSize="36sp"
-        android:textColor="#FFFFFF"
+        android:textColor="#d1d1d1"
 
         android:id="@+id/textView" />
 
@@ -110,7 +110,7 @@
             android:id="@+id/threeBtn"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
             android:text="="
-            android:background="@drawable/secondbutton_secelctor"
+            android:background="@drawable/equalbutton_selector"
             android:layout_rowSpan="2"
             style="@style/CalcButtonTheme"
             android:id="@+id/equallyBtn"/>
