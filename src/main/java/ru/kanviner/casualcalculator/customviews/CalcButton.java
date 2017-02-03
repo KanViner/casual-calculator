@@ -1,9 +1,12 @@
 package ru.kanviner.casualcalculator.customviews;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.util.Size;
 import android.widget.Button;
+
+import ru.kanviner.casualcalculator.R;
 
 /**
  * Created by Zhenya on 21.01.2017.
@@ -13,8 +16,17 @@ import android.widget.Button;
 
 public class CalcButton extends Button {
 
+    {
+        xyRelation = 1.135593220338983; //Число взято практически с потолка
+        tapColor = R.color.tapBtnColor;
+        mainColor = Color.BLACK; //Осоновной цвет кнопок по умолчанию
+    }
+
     //Переменная позволяет сохранять пропорции кнопок
-    private double xyRelation = 1.135593220338983;
+    private double xyRelation;
+    //Переменная хранит цвет кнопки во время нажатия на нее
+    private int tapColor;
+    private int mainColor;
 
     public CalcButton(Context context) {
         super(context);

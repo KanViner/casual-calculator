@@ -1,85 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main_activitity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:background="#000000"
+
     tools:context="ru.kanviner.casualcalculator.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
         android:text="Hello Calc!"
+        android:layout_gravity="right|bottom"
+        android:gravity="bottom"
+
+        android:textSize="36sp"
+        android:textColor="#FFFFFF"
+
         android:id="@+id/textView" />
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:columnCount="4"
-        android:layout_alignParentStart="true">
+        android:layout_marginBottom="10dp"
+        android:columnCount="4">
 
         <ru.kanviner.casualcalculator.customviews.CalcButton
             android:text="⇚"
-            style="@style/CalcButtonTheme"/>
+            android:background="@drawable/secondbutton_secelctor"
+            style="@style/CalcButtonTheme"
+            android:id="@+id/deleteBtn"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
             android:text="√"
-            style="@style/CalcButtonTheme"/>
+            android:background="@drawable/secondbutton_secelctor"
+            style="@style/CalcButtonTheme"
+            android:id="@+id/sqrBtn"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
             android:text="/"
-            style="@style/CalcButtonTheme"/>
+            android:background="@drawable/secondbutton_secelctor"
+            style="@style/CalcButtonTheme"
+            android:id="@+id/divBtn"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
-            android:text="X"
-            style="@style/CalcButtonTheme"/>
+            android:text="×"
+            android:background="@drawable/secondbutton_secelctor"
+            style="@style/CalcButtonTheme"
+            android:id="@+id/multBtn"/>
 
         <ru.kanviner.casualcalculator.customviews.CalcButton
             android:text="7"
-            style="@style/CalcButtonTheme"/>
+            android:background="@drawable/mainbutton_selector"
+            style="@style/CalcButtonTheme"
+            android:id="@+id/sevenBtn"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
             android:text="8"
-            style="@style/CalcButtonTheme"/>
+            android:background="@drawable/mainbutton_selector"
+            style="@style/CalcButtonTheme"
+            android:id="@+id/eightBtn"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
             android:text="9"
-            style="@style/CalcButtonTheme"/>
+            android:background="@drawable/mainbutton_selector"
+            style="@style/CalcButtonTheme"
+            android:id="@+id/nineBtn"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
             android:text="-"
-            style="@style/CalcButtonTheme"/>
+            android:background="@drawable/secondbutton_secelctor"
+            style="@style/CalcButtonTheme"
+            android:id="@+id/minusBtn"/>
 
         <ru.kanviner.casualcalculator.customviews.CalcButton
             android:text="4"
-            style="@style/CalcButtonTheme"/>
+            android:background="@drawable/mainbutton_selector"
+            style="@style/CalcButtonTheme"
+            android:id="@+id/fourBtn"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
             android:text="5"
-            style="@style/CalcButtonTheme"/>
+            android:background="@drawable/mainbutton_selector"
+            style="@style/CalcButtonTheme"
+            android:id="@+id/fiveBtn"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
             android:text="6"
-            style="@style/CalcButtonTheme"/>
+            android:background="@drawable/mainbutton_selector"
+            style="@style/CalcButtonTheme"
+            android:id="@+id/sixBtn"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
             android:text="+"
-            style="@style/CalcButtonTheme"/>
+            android:background="@drawable/secondbutton_secelctor"
+            style="@style/CalcButtonTheme"
+            android:id="@+id/plusBtn"/>
 
         <ru.kanviner.casualcalculator.customviews.CalcButton
             android:text="1"
-            style="@style/CalcButtonTheme"/>
+            android:background="@drawable/mainbutton_selector"
+            style="@style/CalcButtonTheme"
+            android:id="@+id/oneBtn"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
             android:text="2"
-            style="@style/CalcButtonTheme"/>
+            android:background="@drawable/mainbutton_selector"
+            style="@style/CalcButtonTheme"
+            android:id="@+id/twoBtn"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
             android:text="3"
-            style="@style/CalcButtonTheme"/>
+            android:background="@drawable/mainbutton_selector"
+            style="@style/CalcButtonTheme"
+            android:id="@+id/threeBtn"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
             android:text="="
+            android:background="@drawable/secondbutton_secelctor"
             android:layout_rowSpan="2"
             style="@style/CalcButtonTheme"
             android:id="@+id/equallyBtn"/>
 
         <ru.kanviner.casualcalculator.customviews.CalcButton
             android:text="0"
+            android:background="@drawable/mainbutton_selector"
             style="@style/CalcButtonTheme"
             android:layout_columnSpan="2"
             android:id="@+id/zeroBtn"/>
         <ru.kanviner.casualcalculator.customviews.CalcButton
             android:text="·"
-            style="@style/CalcButtonTheme"/>
+            android:background="@drawable/mainbutton_selector"
+            style="@style/CalcButtonTheme"
+            android:id="@+id/dotBtn"/>
     </GridLayout>
-</RelativeLayout>
+</LinearLayout>
