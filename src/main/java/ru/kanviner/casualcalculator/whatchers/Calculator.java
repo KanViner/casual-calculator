@@ -1,6 +1,8 @@
 package ru.kanviner.casualcalculator.whatchers;
 
+import android.view.Gravity;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 import java.util.Arrays;
@@ -22,8 +24,10 @@ public class Calculator {
     private String secondNumber = "";
     private boolean is2Dot;
 
-    private Character[] digits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+    private static Character[] digits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
     public static Character DOT = '.';
+    private static String infinityToastMessage = "Infinity";
+    private static String nanToastMessage = "Not a number";
 
     public Calculator(TextView displayView) {
         this.displayView = displayView;
@@ -56,7 +60,7 @@ public class Calculator {
         int len2 = len2();
 
         if (state == State.INPUT_FIRST) {
-            if ( digit == DOT && !is1Dot && len1 > 0 && len1 <= maxLength - 1 ) {
+            if ( digit == DOT && !is1Dot && len1 > 0 && len1 <= maxLength - 1 && !firstNumber.equals("-")) {
                 firstNumber = firstNumber + digit;
                 app(digit.toString());
                 is1Dot = true;
@@ -67,7 +71,7 @@ public class Calculator {
             }
         }
         if (state == State.INPUT_SECOND) {
-            if ( digit == DOT && !is2Dot && len2 > 0 && len2 <= maxLength - 1 ) {
+            if ( digit == DOT && !is2Dot && len2 > 0 && len2 <= maxLength - 1 && !secondNumber.equals("-") ) {
                 secondNumber = secondNumber + digit;
                 app(digit.toString());
                 is2Dot = true;
@@ -93,8 +97,11 @@ public class Calculator {
     //
 
     public void plus () {
-        if (state == State.END || state == State.INPUT_SECOND || len1() == 0) return;
-        if (firstNumber.length() == 1 && firstNumber.equals("-")) return; //проверка чтобы не был введен только минус
+        if ( state == State.END || len1() == 0 || (len2() == 0 && state == State.INPUT_SECOND) ) return;
+        if (firstNumber.equals("-")) return; //проверка чтобы не был введен только минус
+
+        //Автоматом вызывает равно если операция вызвана во время ввода второго числа
+        if ( state == State.INPUT_SECOND && !secondNumber.equals('-') && secondNumber.length() > 0 ) equality();
 
         operation = Operation.PLUS;
         state = State.INPUT_SECOND;
@@ -102,15 +109,18 @@ public class Calculator {
     }
 
     public void minus () {
-        if ( state == State.END || (state == State.INPUT_SECOND && secondNumber.length() > 0) ) return;
-        if (firstNumber.length() == 1 && firstNumber.equals("-")) return; //проверка чтобы не был введен только минус
+        if ( state == State.END ) return;
+        if (firstNumber.equals("-") || secondNumber.equals("-")) return; //проверка чтобы не был введен только минус
+
+        //Автоматом вызывает равно если операция вызвана во время ввода второго числа
+        if ( state == State.INPUT_SECOND && !secondNumber.equals('-') && secondNumber.length() > 0 ) equality();
 
         if (state == State.INPUT_FIRST && firstNumber.length() == 0) {
             firstNumber = "-";
             app("-");
             return;
         }
-        if (state == State.INPUT_SECOND) {
+        if (state == State.INPUT_SECOND && secondNumber.equals("")) {
             secondNumber = "-";
             app("-");
             return;
@@ -122,8 +132,11 @@ public class Calculator {
     }
 
     public void mult () {
-        if (state == State.END || state == State.INPUT_SECOND || len1() == 0) return;
-        if (firstNumber.length() == 1 && firstNumber.equals("-")) return; //проверка чтобы не был введен только минус
+        if (state == State.END || (len2() == 0 && state == State.INPUT_SECOND) || len1() == 0) return;
+        if (firstNumber.equals("-") || secondNumber.equals("-")) return; //проверка чтобы не был введен только минус
+
+        //Автоматом вызывает равно если операция вызвана во время ввода второго числа
+        if ( state == State.INPUT_SECOND && !secondNumber.equals('-') && secondNumber.length() > 0 ) equality();
 
         operation = Operation.MULT;
         state = State.INPUT_SECOND;
@@ -131,8 +144,11 @@ public class Calculator {
     }
 
     public void div () {
-        if (state == State.END || state == State.INPUT_SECOND || len1() == 0) return;
-        if (firstNumber.length() == 1 && firstNumber.equals("-")) return; //проверка чтобы не был введен только минус
+        if (state == State.END || (len2() == 0 && state == State.INPUT_SECOND) || len1() == 0) return;
+        if (firstNumber.equals("-") || secondNumber.equals("-")) return; //проверка чтобы не был введен только минус
+
+        //Автоматом вызывает равно если операция вызвана во время ввода второго числа
+        if ( state == State.INPUT_SECOND && !secondNumber.equals('-') && secondNumber.length() > 0 ) equality();
 
         operation = Operation.DIV;
         state = State.INPUT_SECOND;
@@ -145,12 +161,12 @@ public class Calculator {
 
     public void sqrt () {
         if (state == State.END || state == State.INPUT_SECOND || len1() == 0) return;
-        if (firstNumber.length() == 1 && firstNumber.equals("-")) return; //проверка чтобы не был введен только минус
+        if ( firstNumber.equals("-") ) return; //проверка чтобы не был введен только минус
 
         double result = Math.sqrt(Double.parseDouble(firstNumber));
         nulling();
         firstNumber = result + "";
-        app(result + "");
+        showResult(result);
         setState(State.INPUT_FIRST);
     }
 
@@ -158,6 +174,7 @@ public class Calculator {
         if (state == State.END) return;
 
         if (state == State.INPUT_FIRST && firstNumber.length() > 0) {
+            if ( displayView.getText().charAt(displayView.length() - 1) == DOT ) is1Dot = false;
             firstNumber = displayView.getText().subSequence(0, displayView.length()-1).toString();
             displayView.setText(firstNumber);
             return;
@@ -165,6 +182,7 @@ public class Calculator {
 
         if (state == State.INPUT_SECOND) {
             if (secondNumber.length() > 0) {
+                if ( displayView.getText().charAt(displayView.length() - 1) == DOT ) is2Dot = false;
                 secondNumber = displayView.getText()
                         .subSequence(displayView.length()-secondNumber.length(), displayView.length()-1).toString();
                 displayView.setText(displayView.getText().subSequence(0, displayView.length() - 1));
@@ -209,10 +227,39 @@ public class Calculator {
         nulling();
         firstNumber = result + "";
 
-        if (result % 1 == 0) app( (int) result + "" );
-        else app(result + "");
+        showResult(result);
 
         setState(State.INPUT_FIRST);
+    }
+
+    // Выводит result на display, проверяя целое это или дробное, а так же Nan или Infinity
+    private void showResult (Double result) {
+        String formatted = result.toString(); // Переменная для отображения в дисплее
+
+        if (result.isInfinite()) {
+            showToast(infinityToastMessage);
+            return;
+        }
+        if (result.isNaN()) {
+            showToast(nanToastMessage);
+            return;
+        }
+
+        if (result % 1 == 0 && result <= Integer.MAX_VALUE) {
+            DecimalFormat formatter = new DecimalFormat("#");
+            formatted = formatter.format(result);
+        }
+
+        app(formatted);
+    }
+
+    // Показывает короткое уведомление с надписью message
+    private void showToast (String message) {
+        Toast toast = Toast.makeText(displayView.getContext(), message, Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.TOP, 0, (int) displayView.getY() + displayView.getHeight()); // 100 это смещение сообщения от верхнего экрана
+        toast.show();
+
+        nulling();
     }
 
     // Рекурсивный метод проверяет есть ли в массиве value

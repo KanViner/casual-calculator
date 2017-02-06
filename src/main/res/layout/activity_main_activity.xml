@@ -19,7 +19,7 @@
         android:layout_gravity="right|bottom"
         android:gravity="bottom|right"
 
-        android:textSize="36sp"
+        android:textSize="32sp"
         android:textColor="#d1d1d1"
 
         android:id="@+id/textView" />
