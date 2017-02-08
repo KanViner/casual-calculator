@@ -11,7 +11,14 @@
                     "endOffset": 97
                 },
                 "from": {
-                    "file": "E:\\android\\AndroidStudioProjects\\CasualCalculator\\casualcalculator\\src\\main\\res\\values\\colors.xml"
+                    "file": "E:\\android\\AndroidStudioProjects\\CasualCalculator\\casualcalculator\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 57,
+                        "endColumn": 46,
+                        "endOffset": 99
+                    }
                 }
             },
             {
@@ -23,7 +30,14 @@
                     "endOffset": 146
                 },
                 "from": {
-                    "file": "E:\\android\\AndroidStudioProjects\\CasualCalculator\\casualcalculator\\src\\main\\res\\values\\colors.xml"
+                    "file": "E:\\android\\AndroidStudioProjects\\CasualCalculator\\casualcalculator\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 105,
+                        "endColumn": 48,
+                        "endOffset": 149
+                    }
                 }
             },
             {
@@ -35,7 +49,14 @@
                     "endOffset": 195
                 },
                 "from": {
-                    "file": "E:\\android\\AndroidStudioProjects\\CasualCalculator\\casualcalculator\\src\\main\\res\\values\\colors.xml"
+                    "file": "E:\\android\\AndroidStudioProjects\\CasualCalculator\\casualcalculator\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 202,
+                        "endColumn": 48,
+                        "endOffset": 246
+                    }
                 }
             },
             {
@@ -47,7 +68,14 @@
                     "endOffset": 241
                 },
                 "from": {
-                    "file": "E:\\android\\AndroidStudioProjects\\CasualCalculator\\casualcalculator\\src\\main\\res\\values\\colors.xml"
+                    "file": "E:\\android\\AndroidStudioProjects\\CasualCalculator\\casualcalculator\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 155,
+                        "endColumn": 45,
+                        "endOffset": 196
+                    }
                 }
             },
             {
@@ -59,7 +87,14 @@
                     "endOffset": 299
                 },
                 "from": {
-                    "file": "E:\\android\\AndroidStudioProjects\\CasualCalculator\\casualcalculator\\src\\main\\res\\values\\dimens.xml"
+                    "file": "E:\\android\\AndroidStudioProjects\\CasualCalculator\\casualcalculator\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 90,
+                        "endColumn": 57,
+                        "endOffset": 143
+                    }
                 }
             },
             {
@@ -71,7 +106,14 @@
                     "endOffset": 355
                 },
                 "from": {
-                    "file": "E:\\android\\AndroidStudioProjects\\CasualCalculator\\casualcalculator\\src\\main\\res\\values\\dimens.xml"
+                    "file": "E:\\android\\AndroidStudioProjects\\CasualCalculator\\casualcalculator\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 149,
+                        "endColumn": 55,
+                        "endOffset": 200
+                    }
                 }
             },
             {
@@ -83,7 +125,14 @@
                     "endOffset": 410
                 },
                 "from": {
-                    "file": "E:\\android\\AndroidStudioProjects\\CasualCalculator\\casualcalculator\\src\\main\\res\\values\\strings.xml"
+                    "file": "E:\\android\\AndroidStudioProjects\\CasualCalculator\\casualcalculator\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 1,
+                        "startColumn": 4,
+                        "startOffset": 17,
+                        "endColumn": 54,
+                        "endOffset": 67
+                    }
                 }
             },
             {

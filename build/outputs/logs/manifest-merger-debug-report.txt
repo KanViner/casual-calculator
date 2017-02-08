@@ -22,7 +22,7 @@ ADDED from E:\android\AndroidStudioProjects\CasualCalculator\casualcalculator\sr
 	android:allowBackup
 		ADDED from E:\android\AndroidStudioProjects\CasualCalculator\casualcalculator\src\main\AndroidManifest.xml:6:9-35
 	android:icon
-		ADDED from E:\android\AndroidStudioProjects\CasualCalculator\casualcalculator\src\main\AndroidManifest.xml:7:9-43
+		ADDED from E:\android\AndroidStudioProjects\CasualCalculator\casualcalculator\src\main\AndroidManifest.xml:7:9-36
 	android:theme
 		ADDED from E:\android\AndroidStudioProjects\CasualCalculator\casualcalculator\src\main\AndroidManifest.xml:10:9-40
 activity#ru.kanviner.casualcalculator.MainActivity
